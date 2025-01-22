@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title><?php echo $metaTitulo; ?></title>    
+
+    <!-- Meta -->
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Web Fonts -->
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="assets/css/headers/header-default.css">
+    <link rel="stylesheet" href="assets/css/footers/footer-v1.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/animate.css">
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">   
+
+    <!-- CSS Theme -->    
+    <link rel="stylesheet" href="assets/css/theme-colors/default.css" id="style_color">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>	
+
+<body>
+
+<div class="wrapper">
+    <!--=== Header ===-->    
+    <div class="header">
+        <div class="container">
+            <!-- Logo -->
+            <a class="logo" href="http://construcali.com/administrador.php">
+                <img src="assets/img/logopru4.png" alt="Logo">
+            </a>
+            <!-- End Logo -->
+            
+            <!-- Topbar -->
+            <div class="topbar">
+                <ul class="loginbar pull-right">
+                    <li class="hoverSelector">
+                        Colconstruccion.com
+                    </li>
+                    <li class="topbar-devider"></li>   
+                    <li><a href="usuarios.php" class="btn-u btn-brd btn-brd-hover btn-u-light margin-right-5">acceso usuarios</a></li>  
+                    <li class="topbar-devider"></li>   
+                    <li><a href="usuarios.php?content=registrarse">Inscribirse</a></li>   
+                </ul>
+            </div>
+            <!-- End Topbar -->
+
+            <!-- Toggle get grouped for better mobile display -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="fa fa-bars"></span>
+            </button>
+            <!-- End Toggle -->
+        </div><!--/end container-->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <!-- Pages -->                        
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- About Pages -->
+                             <li class="dropdown-submenu">
+                                    <a href="javascript:void(0);">Publicidad</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="inicio.php?content=servicios">Paginas web</a></li>
+                                        <li><a href="inicio.php?content=servicios#funcionalidad">Bases de datos</a></li>
+                                        <li><a href="inicio.php?content=servicios#funcionalidad">Funcionalidad en la red</a></li>
+                                        <li><a href="inicio.php?content=servicios#correos">Correos masivos</a></li>
+                                        <li><a href="inicio.php?content=servicios#proyectos">Publicidad impresa</a></li>
+                                    </ul>                                
+                            </li>
+                            <!-- End About Pages -->
+
+                            <!-- Service Pages -->
+                             <li class="dropdown-submenu">
+                                    <a href="javascript:void(0);">Mercadeo</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="inicio.php?content=servicios#investigacion">Investigacion de mercado</a></li>
+                                        <li><a href="inicio.php?content=servicios#proyectos">Traducion de Documentos</a></li>
+                                    </ul>                                
+                            </li>
+                            <!-- End Service Pages -->
+
+                            <!-- Contacts -->
+                            <li class="dropdown-submenu">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                        Contactenos
+                                </a>
+                                <ul class="dropdown-menu">
+                                        <li><a href="usuarios.php?content=contactar">Escribanos</a></li>
+                                </ul>
+                            </li>
+                            <!-- End Contacts -->                    
+                        </ul>
+                    </li>
+                    <!-- End Pages -->
+
+                    <!-- Blog -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            International
+                        </a>
+                        <ul class="dropdown-menu">
+                             <li class="dropdown-submenu">
+                                    <a href="javascript:void(0);">Marketing</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="inicio.php?content=services">Market Research</a></li>
+                                        <li><a href="inicio.php?content=services">Lead Generation</a></li>
+                                        <li><a href="inicio.php?content=services">Email Marketing</a></li>
+                                    </ul>                                
+                                </li>
+                            <li><a href="inicio.php?content=services">Translation</a></li>                           
+                        </ul>
+                    </li>
+                    <!-- End Blog -->
+                    <!-- Home -->
+                    <!-- Parece que codeigniter considera el controlador al penultimo segmento que uno mande en el url, talvez considera al ultimo la funcion en el controlador-->
+                    <li id="presupuestoCode">
+                    <?php 
+                    $usuarioid = $_SESSION['usuario'];
+                    if (empty($usuarioid))
+                        echo "<a href=\"analisis/index.php/articulos/view\">Presupuestos</a>";
+                    else
+                        echo "<a href=\"http://construcali.com/analisis/index.php/articulos/main\" id=\"$usuarioid\">Presupuestos</a>";
+                    ?>
+                    </li>
+                    <!-- End Home -->
+                    <!-- Portfolio -->
+                    <li>
+                            <a href="empresas.php">
+                                Empresas
+                            </a>
+                    </li>
+                    <!-- End Portfolio -->
+
+                    <!-- Features -->
+                    <li>
+                        <a href="catalogos.php">
+                                Catalogos
+                         </a>
+                    </li>    
+                    <!-- End Features -->
+
+                    <!-- Shortcodes -->
+                     <li>
+                        <a href="anuncios.php">
+                            Clasificados
+                        </a>
+                    </li>
+                    <!-- End Shortcodes -->
+
+                    <!-- Misc Pages -->
+                    <li>
+                        <a href="foros.php">
+                            Foros
+                        </a>
+                    </li>                    
+                    <!-- End Misc Pages -->
+
+                    <!-- Search Block -->
+                    <li>
+                        <i class="search fa fa-search search-btn"></i>
+                        <div class="search-open">
+                            <div class="input-group animated fadeInDown">
+                            <form method="post" action="empresas.php?content=buscarempresa">
+                                <input type="text" class="form-control" name="buscar" placeholder="Buscar Empresas">
+                                <span class="input-group-btn">
+                                    <button class="btn-u" type="submit">Buscar</button>
+                                </span>
+                            </form>
+                            </div>
+                        </div>    
+                    </li>
+                    <!-- End Search Block -->
+                </ul>
+            </div><!--/end container-->
+        </div><!--/navbar-collapse-->
+    </div>
+    <!--=== End Header ===-->
+
+    
