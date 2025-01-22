@@ -1,0 +1,6 @@
+directorio de archivos en javascript relacionado con paginas, documento php a donde se envia y desde donde se enlaza al javascript
+
+contactarEmpresa.js - estaempresa.inc.php - cotizar.php - footer.html, linea 177
+cargarMasAnuncios.js - clacontenido.inc.php - anuncios.php - anuncios.php, linea 786
+cargarMasBoletines.js - tablero.inc.php - usuarios.php
+mostrarRectagunlo.js - tablero.incphp - esconde y muestra las cajas de respuestas

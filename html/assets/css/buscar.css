@@ -1,0 +1,41 @@
+/* Auto-suggest styles 
+se usa para formatear las sugerencias que aparecen en catalogacion.inc.php y empresas.inc.php
+*/
+
+div#suggestions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /*width: 416px; */
+  display: none;
+}
+
+ul#suggestions li {
+
+}
+
+ul#suggestions li a {
+  display: block;
+  min-height: 1em;
+  padding: 0.5em 10px;
+  background: #CCC;
+  color: #000;
+  text-decoration: none;
+}
+
+ul#suggestions li a:hover {
+  background: #AAA;
+}
+
+div#suggestions a {
+  display: block;
+  min-height: 1em;
+  padding: 0.5em 10px;
+  background: #CCC;
+  color: #000;
+  text-decoration: none;
+}
+
+div#suggestions a:hover {
+  background: #AAA;
+}
